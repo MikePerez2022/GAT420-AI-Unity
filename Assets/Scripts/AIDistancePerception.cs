@@ -11,8 +11,9 @@ public class AIDistancePerception : AIPerception
         Collider[] colliders = Physics.OverlapSphere(transform.position, distance);
         foreach (Collider collider in colliders)
         {
-            //check if collision is self, skip if so
-            if (collider.gameObject == gameObject) continue;
+			print(TagName);
+			//check if collision is self, skip if so
+			if (collider.gameObject == gameObject) continue;
 
             if (tagName == "" || collider.CompareTag(tagName))
             {
