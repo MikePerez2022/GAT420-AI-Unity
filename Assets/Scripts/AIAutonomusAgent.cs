@@ -47,10 +47,10 @@ public class AIAutonomusAgent : Agent
 		//obstacle avoidence
 		if (obstaclePerception != null)
 		{
-			if (((AIRaycastPerception)obstaclePerception).CheckDirection(Vector3.forward))
+			if (((AISpherecastPerception)obstaclePerception).CheckDirection(Vector3.forward))
 			{
 				Vector3 open = Vector3.zero;
-				if (((AIRaycastPerception)obstaclePerception).GetOpenDirection(ref open))
+				if (((AISpherecastPerception)obstaclePerception).GetOpenDirection(ref open))
 				{
 					Movement.ApplyForce(GetSteeringForce(open) * 5);
 				}

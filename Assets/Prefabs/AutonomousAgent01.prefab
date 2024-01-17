@@ -15,7 +15,8 @@ GameObject:
   - component: {fileID: -5478924987177545768}
   - component: {fileID: 434849134091121791}
   - component: {fileID: 6070915162887823827}
-  - component: {fileID: -6856151898204469285}
+  - component: {fileID: -462380584509710321}
+  - component: {fileID: -7738002013006894092}
   m_Layer: 0
   m_Name: AutonomousAgent01
   m_TagString: Agent01
@@ -55,7 +56,7 @@ MonoBehaviour:
   seekPerception: {fileID: -5478924987177545768}
   fleePerception: {fileID: 2849399724286593723, guid: e4e3b1980bbc7024d9770b5416c4cf64, type: 3}
   flockPerception: {fileID: -5478924987177545768}
-  obstaclePerception: {fileID: -6856151898204469285}
+  obstaclePerception: {fileID: -7738002013006894092}
 --- !u!114 &8469944124871456854
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,7 +148,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &-6856151898204469285
+--- !u!114 &-462380584509710321
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -165,7 +166,27 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 64
-  numRaycast: 10
+  numRaycast: 2
+--- !u!114 &-7738002013006894092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3764882981028373470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 038d74c05798bc44a8d672fc41028d38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagName: 
+  distance: 5
+  maxAngle: 80
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 64
+  numRaycast: 17
+  radius: 0.5
 --- !u!1001 &3394493301736568142
 PrefabInstance:
   m_ObjectHideFlags: 0
