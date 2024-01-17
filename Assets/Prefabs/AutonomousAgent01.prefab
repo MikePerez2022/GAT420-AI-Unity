@@ -55,7 +55,7 @@ MonoBehaviour:
   seekPerception: {fileID: -5478924987177545768}
   fleePerception: {fileID: 2849399724286593723, guid: e4e3b1980bbc7024d9770b5416c4cf64, type: 3}
   flockPerception: {fileID: -5478924987177545768}
-  obsticlePerception: {fileID: 0}
+  obstaclePerception: {fileID: -6856151898204469285}
 --- !u!114 &8469944124871456854
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -161,11 +161,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tagName: 
   distance: 5
-  maxAngle: 45
+  maxAngle: 80
   layerMask:
     serializedVersion: 2
-    m_Bits: 63
-  numRaycast: 4
+    m_Bits: 64
+  numRaycast: 10
 --- !u!1001 &3394493301736568142
 PrefabInstance:
   m_ObjectHideFlags: 0

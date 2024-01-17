@@ -7,7 +7,7 @@ public class AIAutonomusAgent : Agent
     [SerializeField] AIPerception seekPerception = null;
     [SerializeField] AIPerception fleePerception = null;
     [SerializeField] AIPerception flockPerception = null;
-    [SerializeField] AIPerception obsticlePerception = null;
+    [SerializeField] AIPerception obstaclePerception = null; 
 
     private void Update()
     {
@@ -44,17 +44,17 @@ public class AIAutonomusAgent : Agent
 			}
 		}
 
-        //obsticle avoidence
-		if(obsticlePerception != null)
-        {
-			if (((AIRaycastPerception)obsticlePerception).CheckDirection(Vector3.forward))
+		//obstacle avoidence
+		if (obstaclePerception != null)
+		{
+			if (((AIRaycastPerception)obstaclePerception).CheckDirection(Vector3.forward))
 			{
 				Vector3 open = Vector3.zero;
-				if(((AIRaycastPerception)obsticlePerception).GetOpenDirection(ref open))
+				if (((AIRaycastPerception)obstaclePerception).GetOpenDirection(ref open))
 				{
 					Movement.ApplyForce(GetSteeringForce(open) * 5);
 				}
-			}		
+			}
 		}
 
 		Vector3 acceleration = Movement.acceleration;

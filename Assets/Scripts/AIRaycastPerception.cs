@@ -16,14 +16,11 @@ public class AIRaycastPerception : AIPerception
         {
             Ray ray = new Ray(transform.position, transform.rotation * direction);
 
-            Debug.DrawRay(ray.origin, ray.direction * distance, Color.red);
-
             if (Physics.Raycast(ray, out RaycastHit raycastHit, distance))
             {
-                print(TagName);
                 Debug.DrawRay(ray.origin, ray.direction * raycastHit.distance, Color.red);
-
                 if (raycastHit.collider.gameObject == gameObject) continue;
+
                 if (tagName == "" || raycastHit.collider.CompareTag(tagName))
                 {
                     result.Add(raycastHit.collider.gameObject);
