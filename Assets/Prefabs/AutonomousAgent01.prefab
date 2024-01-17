@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: -5478924987177545768}
   - component: {fileID: 434849134091121791}
   - component: {fileID: 6070915162887823827}
+  - component: {fileID: -6856151898204469285}
   m_Layer: 0
   m_Name: AutonomousAgent01
   m_TagString: Agent01
@@ -32,7 +33,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4133636038292961999}
@@ -54,6 +55,7 @@ MonoBehaviour:
   seekPerception: {fileID: -5478924987177545768}
   fleePerception: {fileID: 2849399724286593723, guid: e4e3b1980bbc7024d9770b5416c4cf64, type: 3}
   flockPerception: {fileID: -5478924987177545768}
+  obsticlePerception: {fileID: 0}
 --- !u!114 &8469944124871456854
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -106,6 +108,9 @@ MonoBehaviour:
   tagName: Agent01
   distance: 5
   maxAngle: 120
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!114 &434849134091121791
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -121,6 +126,9 @@ MonoBehaviour:
   tagName: Agent02
   distance: 5
   maxAngle: 45
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!114 &6070915162887823827
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -136,6 +144,28 @@ MonoBehaviour:
   tagName: Agent03
   distance: 1
   maxAngle: 60
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!114 &-6856151898204469285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3764882981028373470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d0d637e7c3375341aa483bcfa9a7524, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagName: 
+  distance: 5
+  maxAngle: 45
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 63
+  numRaycast: 4
 --- !u!1001 &3394493301736568142
 PrefabInstance:
   m_ObjectHideFlags: 0

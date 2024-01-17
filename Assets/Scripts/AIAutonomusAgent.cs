@@ -7,6 +7,7 @@ public class AIAutonomusAgent : Agent
     [SerializeField] AIPerception seekPerception = null;
     [SerializeField] AIPerception fleePerception = null;
     [SerializeField] AIPerception flockPerception = null;
+    [SerializeField] AIPerception obsticlePerception = null;
 
     private void Update()
     {
@@ -43,7 +44,24 @@ public class AIAutonomusAgent : Agent
 			}
 		}
 
-		transform.position = Utilities.wrap(transform.position, new Vector3(-10,-5,-10), new Vector3(10, 5, 10));
+        //obsticle avoidence
+		if(obsticlePerception != null)
+        {
+			if (((AIRaycastPerception)obsticlePerception).CheckDirection(Vector3.forward))
+			{
+				Vector3 open = Vector3.zero;
+				if(((AIRaycastPerception)obsticlePerception).GetOpenDirection(ref open))
+				{
+					Movement.ApplyForce(GetSteeringForce(open) * 5);
+				}
+			}		
+		}
+
+		Vector3 acceleration = Movement.acceleration;
+		acceleration.y = 0;
+		Movement.acceleration = acceleration;
+
+		transform.position = Utilities.wrap(transform.position, new Vector3(-10,-10,-10), new Vector3(10, 10, 10));
     }
 
     private Vector3 Seek(GameObject target)
@@ -86,7 +104,7 @@ public class AIAutonomusAgent : Agent
 			Vector3 direction = (transform.position - neighbor.transform.position);
 			if(direction.magnitude < radius)
 			{
-				seperation += direction / direction.sqrMagnitude;
+				seperation += (direction / direction.sqrMagnitude) * 10;
 			}
 		}
 
