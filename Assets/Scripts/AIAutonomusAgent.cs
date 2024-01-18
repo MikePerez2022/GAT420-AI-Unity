@@ -61,7 +61,7 @@ public class AIAutonomusAgent : Agent
 		acceleration.y = 0;
 		Movement.acceleration = acceleration;
 
-		transform.position = Utilities.wrap(transform.position, new Vector3(-10,-10,-10), new Vector3(10, 10, 10));
+		transform.position = Utilities.wrap(transform.position, new Vector3(-15,-10,-15), new Vector3(15, 10, 15));
     }
 
     private Vector3 Seek(GameObject target)

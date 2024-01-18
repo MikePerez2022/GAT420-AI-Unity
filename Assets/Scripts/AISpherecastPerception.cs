@@ -14,8 +14,18 @@ public class AISpherecastPerception : AIPerception
         foreach (Vector3 direction in directions)
         {
             Ray ray = new Ray(transform.position, transform.rotation * direction);
-            Gizmos.color = Color.yellow;
-            Gizmos.DrawWireSphere(ray.origin + ray.direction * distance, radius);
+            //Gizmos.color = Color.yellow;
+            //Gizmos.DrawWireSphere(ray.origin + ray.direction * distance, radius);
+            if (Physics.SphereCast(ray, radius, out RaycastHit raycastHit, distance))
+            {
+                Gizmos.color = Color.red;
+                Gizmos.DrawWireSphere(ray.origin + ray.direction * distance, radius);
+            }
+            else
+            {
+                Gizmos.color = Color.green;
+                Gizmos.DrawWireSphere(ray.origin + ray.direction * distance, radius);
+            }
         }
     }
 
