@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+guid: 2f53ef966d03f1a4c8c83d97931982c2
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - navNodePrefab: {fileID: 2156492332801369721, guid: 65292f17daeed534fa2ea06dcf744a11, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
